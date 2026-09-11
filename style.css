@@ -854,3 +854,1063 @@ footer {
     }
 
 }
+/* =====================================================
+   ✨ EXTRA ANIMATION & CENTER DESIGN
+   หน้าแรก + ประวัติ
+   ===================================================== */
+
+
+/* =========================================
+   ✨ BACKGROUND EFFECT
+   ========================================= */
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* จุดแสงลอยทั่วเว็บ */
+
+body::before {
+    content: "";
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    top: 10%;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background: rgba(215,167,55,0.10);
+
+    filter: blur(40px);
+
+    pointer-events: none;
+
+    animation: floatingLight 7s ease-in-out infinite;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    right: -150px;
+    bottom: 10%;
+
+    border-radius: 50%;
+
+    background: rgba(128,23,25,0.10);
+
+    filter: blur(45px);
+
+    pointer-events: none;
+
+    animation: floatingLight2 8s ease-in-out infinite;
+}
+
+
+/* =========================================
+   🧭 NAVBAR ANIMATION
+   ========================================= */
+
+.navbar {
+    animation: navbarDrop 0.8s ease both;
+}
+
+.logo {
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.menu a {
+    position: relative;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 3px;
+
+    width: 0;
+    height: 2px;
+
+    background: #f5d477;
+
+    transform: translateX(-50%);
+
+    transition: 0.3s;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+    width: 55%;
+}
+
+
+/* =========================================
+   🏠 HOME HERO
+   ========================================= */
+
+.home-hero {
+    text-align: center;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+    min-height: 760px;
+
+    padding-top: 90px;
+}
+
+
+/* ให้ข้อความอยู่ตรงกลางจริง ๆ */
+
+.home-text {
+    max-width: 850px;
+
+    width: 100%;
+
+    text-align: center;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* ชื่อ */
+
+.home-text h1 {
+    animation:
+        titleBounce 1s ease both,
+        softGlow 3s ease-in-out infinite;
+
+    text-align: center;
+}
+
+
+/* subtitle */
+
+.home-text h2 {
+    text-align: center;
+
+    animation: fadeUp 1s ease 0.2s both;
+}
+
+
+/* paragraph */
+
+.home-text p {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+    animation: fadeUp 1s ease 0.35s both;
+}
+
+
+/* ปุ่ม */
+
+.home-buttons {
+    justify-content: center;
+
+    animation: fadeUp 1s ease 0.5s both;
+}
+
+
+/* =========================================
+   💗 BUTTON BOUNCE
+   ========================================= */
+
+.home-btn {
+    position: relative;
+
+    overflow: hidden;
+
+    animation: buttonFloat 3s ease-in-out infinite;
+}
+
+.home-btn:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.home-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: 0.5s;
+}
+
+.home-btn:hover::before {
+    left: 150%;
+}
+
+.home-btn:hover {
+    transform: translateY(-8px) scale(1.06);
+}
+
+
+/* =========================================
+   🖼️ PROFILE IMAGE
+   ========================================= */
+
+.home-photo {
+    margin: 0 auto;
+
+    animation:
+        photoAppear 1s ease 0.4s both,
+        photoFloat 4s ease-in-out 1.4s infinite;
+}
+
+
+/* กรอบรูปหมุนเบา ๆ */
+
+.photo-frame {
+    position: relative;
+
+    animation:
+        frameGlow 3s ease-in-out infinite;
+}
+
+
+/* แสงวิ่งรอบรูป */
+
+.photo-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: inherit;
+
+    border: 2px solid transparent;
+
+    border-top-color: #fff0a8;
+    border-right-color: rgba(255,255,255,0.5);
+
+    animation: spinBorder 4s linear infinite;
+}
+
+
+/* รูปขยับตอนเอาเมาส์ */
+
+.photo-frame:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+.photo-frame img {
+    transition: 0.6s ease;
+}
+
+.photo-frame:hover img {
+    transform: scale(1.08);
+}
+
+
+/* วงกลมด้านข้าง */
+
+.photo-decoration {
+    animation:
+        decorationFloat 3s ease-in-out infinite,
+        decorationRotate 7s linear infinite;
+}
+
+
+/* =========================================
+   🇨🇳 ตัวอักษรจีนด้านหลัง
+   ========================================= */
+
+.home-hero::after {
+    animation:
+        chineseFloat 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   🏮 INTRO BOX
+   ========================================= */
+
+.intro-box {
+    position: relative;
+
+    overflow: hidden;
+
+    animation: cardAppear 0.8s ease both;
+}
+
+.intro-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -30px;
+    top: -30px;
+
+    border-radius: 50%;
+
+    background: rgba(215,167,55,0.08);
+
+    animation: circlePulse 3s ease-in-out infinite;
+}
+
+.intro-icon {
+    animation:
+        iconBounce 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   🃏 HOME CARDS
+   ========================================= */
+
+.home-cards {
+    perspective: 1000px;
+}
+
+
+/* เด้งแต่ละใบไม่พร้อมกัน */
+
+.home-card {
+    opacity: 0;
+
+    animation: cardPop 0.7s cubic-bezier(.2,.8,.2,1) forwards;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.home-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.home-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.home-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.home-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.home-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+
+/* แสงวิ่งผ่านการ์ด */
+
+.home-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.45),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: 0.7s;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.home-card:hover::before {
+    left: 150%;
+}
+
+
+/* ไอคอนเด้ง */
+
+.home-card-icon {
+    animation: iconWiggle 3s ease-in-out infinite;
+}
+
+.home-card:nth-child(2) .home-card-icon {
+    animation-delay: 0.3s;
+}
+
+.home-card:nth-child(3) .home-card-icon {
+    animation-delay: 0.6s;
+}
+
+.home-card:nth-child(4) .home-card-icon {
+    animation-delay: 0.9s;
+}
+
+.home-card:nth-child(5) .home-card-icon {
+    animation-delay: 1.2s;
+}
+
+
+/* Hover การ์ด */
+
+.home-card:hover {
+    transform:
+        translateY(-14px)
+        scale(1.03)
+        rotateX(2deg);
+
+    box-shadow:
+        0 25px 45px rgba(80,20,20,0.20);
+}
+
+
+/* =========================================
+   👤 PROFILE
+   ========================================= */
+
+.profile-main {
+    text-align: center;
+
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    animation: profileAppear 0.9s ease both;
+}
+
+
+/* รูปอยู่กลาง */
+
+.profile-photo-box {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* รูปโปรไฟล์ */
+
+.profile-photo {
+    animation:
+        profilePhotoFloat 4s ease-in-out infinite,
+        frameGlow 3s ease-in-out infinite;
+
+    transition: 0.5s;
+}
+
+.profile-photo:hover {
+    transform:
+        scale(1.06)
+        rotate(2deg);
+}
+
+
+/* ข้อความจีนใต้รูป */
+
+.profile-chinese {
+    animation: chineseTextFloat 3s ease-in-out infinite;
+}
+
+
+/* ข้อมูลทั้งหมดตรงกลาง */
+
+.profile-info {
+    max-width: 800px;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.profile-info h2 {
+    animation:
+        titleBounce 0.8s ease both,
+        softGlow 3s ease-in-out infinite;
+}
+
+.profile-intro {
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   📋 INFO ITEMS
+   ========================================= */
+
+.info-list {
+    max-width: 750px;
+
+    margin: 25px auto 0;
+
+    text-align: left;
+}
+
+.info-item {
+    transition: 0.35s;
+
+    animation: infoSlide 0.7s ease both;
+}
+
+.info-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.info-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.info-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.info-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.info-item:hover {
+    transform:
+        translateX(8px)
+        scale(1.02);
+
+    box-shadow:
+        0 8px 20px rgba(80,20,20,0.10);
+}
+
+.info-item > span {
+    animation: miniBounce 2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   💕 ABOUT CARDS
+   ========================================= */
+
+.about-card {
+    position: relative;
+
+    overflow: hidden;
+
+    animation: cardPop 0.8s ease both;
+}
+
+.about-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.about-card:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.about-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.about-icon {
+    animation:
+        iconBounce 3s ease-in-out infinite;
+}
+
+.about-card:hover {
+    transform:
+        translateY(-12px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 40px rgba(80,20,20,0.16);
+}
+
+
+/* =========================================
+   🌟 PAGE HEADER
+   ========================================= */
+
+.page-header h1 {
+    animation:
+        titleBounce 0.9s ease both,
+        softGlow 3s ease-in-out infinite;
+}
+
+.page-header .chinese-text {
+    animation:
+        chineseTextFloat 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   🪄 KEYFRAMES
+   ========================================= */
+
+@keyframes navbarDrop {
+
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes logoFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
+}
+
+
+@keyframes titleBounce {
+
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.9);
+    }
+
+    60% {
+        transform: translateY(-8px) scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.6) rotate(-8deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+
+@keyframes photoFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+@keyframes profilePhotoFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+@keyframes decorationFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(8deg);
+    }
+
+}
+
+
+@keyframes decorationRotate {
+
+    0% {
+        box-shadow:
+            0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 18px 35px rgba(215,167,55,0.45);
+    }
+
+    100% {
+        box-shadow:
+            0 10px 25px rgba(0,0,0,0.25);
+    }
+
+}
+
+
+@keyframes chineseFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+
+}
+
+
+@keyframes chineseTextFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+@keyframes buttonFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+}
+
+
+@keyframes iconBounce {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(4deg);
+    }
+
+}
+
+
+@keyframes iconWiggle {
+
+    0%, 80%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    85% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+
+    90% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+
+    95% {
+        transform: translateY(0) rotate(0);
+    }
+
+}
+
+
+@keyframes miniBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+}
+
+
+@keyframes cardPop {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(0.85);
+    }
+
+    70% {
+        transform:
+            translateY(-5px)
+            scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes profileAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(40px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes infoSlide {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes softGlow {
+
+    0%, 100% {
+        text-shadow:
+            0 4px 15px rgba(0,0,0,0.20);
+    }
+
+    50% {
+        text-shadow:
+            0 4px 25px rgba(245,210,100,0.45);
+    }
+
+}
+
+
+@keyframes frameGlow {
+
+    0%, 100% {
+        filter: drop-shadow(
+            0 10px 20px rgba(0,0,0,0.20)
+        );
+    }
+
+    50% {
+        filter: drop-shadow(
+            0 15px 35px rgba(215,167,55,0.35)
+        );
+    }
+
+}
+
+
+@keyframes spinBorder {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes circlePulse {
+
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes floatingLight {
+
+    0%, 100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(80px,40px);
+    }
+
+}
+
+
+@keyframes floatingLight2 {
+
+    0%, 100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(-60px,-50px);
+    }
+
+}
+
+
+/* =========================================
+   📱 MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .home-hero {
+        text-align: center;
+
+        padding-top: 65px;
+
+        gap: 30px;
+    }
+
+    .home-text {
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .home-text h1,
+    .home-text h2,
+    .home-text p {
+        text-align: center;
+    }
+
+    .home-buttons {
+        justify-content: center;
+    }
+
+    .home-photo {
+        transform: scale(0.9);
+    }
+
+    .profile-main {
+        text-align: center;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+
+    .profile-info h2 {
+        text-align: center;
+    }
+
+    .profile-intro {
+        text-align: center;
+    }
+
+    .info-list {
+        text-align: left;
+    }
+
+}
