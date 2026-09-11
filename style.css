@@ -1,6 +1,7 @@
-/* =========================
-   Portfolio - ธวัลพร ชูศรี
-   ========================= */
+/* ===================================
+   PORTFOLIO
+   ธวัลพร ชูศรี
+   =================================== */
 
 * {
     margin: 0;
@@ -9,251 +10,561 @@
 }
 
 body {
-    font-family: "Arial", "Tahoma", sans-serif;
+
+    font-family:
+        "Tahoma",
+        "Arial",
+        sans-serif;
+
     background: #fff8ef;
+
     color: #3d2520;
+
     line-height: 1.7;
 }
 
-/* =========================
-   Navigation
-   ========================= */
 
-nav {
-    width: 100%;
-    background: #a61c1c;
-    padding: 15px 20px;
+/* ===================================
+   NAVBAR
+   =================================== */
+
+.navbar {
+
     display: flex;
-    justify-content: center;
+
+    justify-content: space-between;
+
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+
+    padding: 18px 6%;
+
+    background: #9f1919;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.15);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
 }
 
-nav a {
+
+.logo {
+
     color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.menu {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+
+.menu a {
+
+    color: white;
+
     text-decoration: none;
-    padding: 9px 15px;
+
+    padding: 8px 13px;
+
     border-radius: 20px;
+
+    transition: 0.3s;
+
+    font-size: 14px;
+}
+
+
+.menu a:hover {
+
+    background: #d9a441;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ===================================
+   HERO
+   =================================== */
+
+.hero {
+
+    min-height: 650px;
+
+    padding:
+        80px 8%;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    gap: 60px;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            #f4d7a1 0,
+            transparent 25%
+        ),
+
+        #fff8ef;
+
+    overflow: hidden;
+}
+
+
+.hero-text {
+
+    max-width: 600px;
+
+    animation:
+        slideLeft 1s ease;
+}
+
+
+.small-title {
+
+    color: #b21e1e;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
     font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+.hero h1 {
+
+    font-size: 65px;
+
+    color: #9f1919;
+
+    margin-bottom: 5px;
+
+    line-height: 1.2;
+}
+
+
+.hero h2 {
+
+    font-size: 25px;
+
+    color: #b38a35;
+
+    margin-bottom: 20px;
+}
+
+
+.description {
+
+    font-size: 18px;
+
+    color: #674c43;
+
+    max-width: 550px;
+}
+
+
+/* ===================================
+   BUTTON
+   =================================== */
+
+.buttons {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 15px;
+}
+
+
+.btn {
+
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: #9f1919;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
     transition: 0.3s;
 }
 
-nav a:hover {
-    background: #d8a63d;
-    color: #fff;
-    transform: translateY(-2px);
+
+.btn:hover {
+
+    background: #d9a441;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.15);
 }
 
-/* =========================
-   Home
-   ========================= */
 
-.home {
-    min-height: 88vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.btn.outline {
 
-    padding: 50px 20px;
+    background: transparent;
+
+    border:
+        2px solid #9f1919;
+
+    color: #9f1919;
+}
+
+
+.btn.outline:hover {
+
+    color: white;
+}
+
+
+/* ===================================
+   PROFILE IMAGE
+   =================================== */
+
+.hero-image {
+
+    position: relative;
+
+    animation:
+        float 4s ease-in-out infinite;
+}
+
+
+.circle {
+
+    width: 330px;
+
+    height: 330px;
+
+    border-radius: 50%;
+
+    padding: 10px;
 
     background:
         linear-gradient(
-            rgba(255, 248, 239, 0.88),
-            rgba(255, 248, 239, 0.88)
-        ),
-        url("images/background.jpg");
+            135deg,
+            #9f1919,
+            #d9a441
+        );
 
-    background-size: cover;
-    background-position: center;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.18);
 }
 
-.home h1 {
-    font-size: 65px;
-    color: #a61c1c;
-    letter-spacing: 5px;
-    margin-bottom: 10px;
-}
 
-.home h2 {
-    font-size: 35px;
-    color: #8c1616;
-    margin-bottom: 10px;
-}
+.circle img {
 
-.home p {
-    font-size: 18px;
-    color: #6b5148;
-}
+    width: 100%;
 
-/* =========================
-   Page
-   ========================= */
+    height: 100%;
 
-.page {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 25px;
-}
-
-.page h1 {
-    text-align: center;
-    color: #a61c1c;
-    font-size: 38px;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.page h1::after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 4px;
-    background: #d8a63d;
-    margin: 12px auto;
-    border-radius: 10px;
-}
-
-.page h2 {
-    color: #8c1616;
-    margin-top: 25px;
-    margin-bottom: 12px;
-}
-
-.page p {
-    font-size: 17px;
-    margin-bottom: 12px;
-}
-
-/* =========================
-   Profile
-   ========================= */
-
-.profile {
-    display: block;
-    width: 200px;
-    height: 200px;
     object-fit: cover;
+
     border-radius: 50%;
-    margin: 0 auto 25px;
 
-    border: 6px solid #d8a63d;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border:
+        6px solid #fff8ef;
 }
 
-/* =========================
-   Cards
-   ========================= */
 
-.card {
-    display: inline-block;
-    vertical-align: top;
+.chinese-text {
 
-    width: 31%;
-    margin: 1%;
-    padding: 18px;
+    position: absolute;
+
+    right: -20px;
+
+    bottom: 20px;
+
+    font-size: 55px;
+
+    font-weight: bold;
+
+    color: #9f1919;
+
+    writing-mode:
+        vertical-rl;
+
+    opacity: 0.9;
+}
+
+
+/* ===================================
+   INTRO
+   =================================== */
+
+.intro {
+
+    text-align: center;
+
+    padding:
+        70px 20px 40px;
+}
+
+
+.chinese-title {
+
+    color: #9f1919;
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+
+.intro h2 {
+
+    font-size: 32px;
+
+    color: #9f1919;
+
+    margin: 8px 0;
+}
+
+
+.intro p {
+
+    color: #715950;
+}
+
+
+/* ===================================
+   CARDS
+   =================================== */
+
+.cards {
+
+    max-width: 1100px;
+
+    margin:
+        20px auto 80px;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.home-card {
 
     background: white;
-    border-radius: 18px;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+    text-decoration: none;
+
+    color: #3d2520;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0,0,0,0.08);
 
     transition: 0.3s;
+
+    border-bottom:
+        4px solid #d9a441;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+
+.home-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,0.14);
 }
 
-.card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 12px;
+
+.home-card span {
+
+    font-size: 45px;
 }
 
-.card h2 {
-    font-size: 21px;
-    margin-top: 5px;
+
+.home-card h3 {
+
+    color: #9f1919;
+
+    font-size: 20px;
+
+    margin:
+        10px 0 5px;
 }
 
-.card p {
-    font-size: 15px;
-    color: #6b5148;
+
+.home-card p {
+
+    color: #766057;
+
+    font-size: 14px;
 }
 
-/* =========================
-   Section Box
-   ========================= */
 
-.info-box {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    margin: 25px 0;
-
-    border-left: 6px solid #a61c1c;
-
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-}
-
-/* =========================
-   Footer
-   ========================= */
+/* ===================================
+   FOOTER
+   =================================== */
 
 footer {
-    text-align: center;
-    background: #a61c1c;
+
+    background: #9f1919;
+
     color: white;
-    padding: 20px;
-    margin-top: 40px;
+
+    text-align: center;
+
+    padding: 25px;
 }
 
-/* =========================
-   Mobile
-   ========================= */
 
-@media (max-width: 768px) {
+/* ===================================
+   ANIMATION
+   =================================== */
 
-    nav {
-        padding: 12px;
-        gap: 5px;
+@keyframes slideLeft {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-40px);
     }
 
-    nav a {
-        font-size: 13px;
-        padding: 7px 10px;
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+
+        transform:
+            translateY(0);
     }
 
-    .home h1 {
-        font-size: 42px;
+    50% {
+
+        transform:
+            translateY(-12px);
+    }
+}
+
+
+/* ===================================
+   MOBILE
+   =================================== */
+
+@media (max-width: 850px) {
+
+    .navbar {
+
+        flex-direction:
+            column;
+
+        gap: 15px;
     }
 
-    .home h2 {
-        font-size: 26px;
+
+    .hero {
+
+        flex-direction:
+            column-reverse;
+
+        text-align: center;
+
+        padding:
+            60px 20px;
     }
 
-    .page {
-        padding: 40px 15px;
+
+    .hero h1 {
+
+        font-size: 45px;
     }
 
-    .page h1 {
-        font-size: 30px;
+
+    .hero h2 {
+
+        font-size: 20px;
     }
 
-    .card {
-        width: 100%;
-        margin: 12px 0;
+
+    .description {
+
+        margin: auto;
     }
 
-    .card img {
-        height: auto;
-        max-height: 400px;
+
+    .buttons {
+
+        justify-content:
+            center;
     }
+
+
+    .circle {
+
+        width: 260px;
+
+        height: 260px;
+    }
+
+
+    .cards {
+
+        grid-template-columns:
+            1fr;
+    }
+
 }
